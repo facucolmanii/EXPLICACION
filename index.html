@@ -27,16 +27,12 @@
             padding: 30px 15px;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1000px; margin: 0 auto; }
 
-        /* Encabezado */
         header {
             border-bottom: 3px solid var(--red-val);
             padding-bottom: 20px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             text-align: center;
         }
         .badge-date {
@@ -53,30 +49,32 @@
         h1 { font-size: 2.6rem; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 10px; }
         .subtitle { color: var(--text-muted); font-size: 1.15rem; }
 
-        /* Cajas de alerta / Conceptos */
+        /* RELOJ DEL APOCALIPSIS */
+        .countdown-wrapper {
+            background: linear-gradient(135deg, #18232c 0%, #0f1923 100%);
+            border: 2px solid var(--red-val);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 35px;
+            box-shadow: 0 0 20px rgba(255, 70, 85, 0.2);
+        }
+        .countdown-wrapper h3 { color: var(--text-main); font-size: 1.1rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;}
+        .timer-grid { display: flex; justify-content: center; gap: 15px; }
+        .timer-box { background: #000; min-width: 75px; padding: 10px; border-radius: 8px; border-bottom: 3px solid var(--red-val);}
+        .timer-num { font-size: 2.2rem; font-weight: 900; color: var(--red-val); line-height: 1; font-family: monospace;}
+        .timer-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-top: 5px; font-weight: bold;}
+
+        /* Tarjetas Concepto */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 35px; }
         @media(max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
-
-        .card {
-            background-color: var(--bg-card);
-            border-radius: 12px;
-            padding: 25px;
-            border-left: 5px solid var(--cyan-val);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-        }
+        .card { background-color: var(--bg-card); border-radius: 12px; padding: 25px; border-left: 5px solid var(--cyan-val); box-shadow: 0 8px 16px rgba(0,0,0,0.4); }
         .card.red { border-left-color: var(--red-val); }
-        .card h3 { margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .card h3 { margin-bottom: 15px; font-size: 1.3rem; }
 
         /* Seccion Matematica */
-        .math-container {
-            background: linear-gradient(145deg, #101820, #1b2733);
-            border: 2px solid var(--gold-val);
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 40px;
-        }
+        .math-container { background: linear-gradient(145deg, #101820, #1b2733); border: 2px solid var(--gold-val); border-radius: 12px; padding: 30px; margin-bottom: 40px; }
         .math-container h2 { color: var(--gold-val); margin-bottom: 10px; }
-        
         .roster-list { list-style: none; margin-top: 20px; background: #0f1923; padding: 20px; border-radius: 8px;}
         .roster-list li { display: flex; justify-content: space-between; padding: 10px 5px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 1.1rem;}
         .roster-list li.cut-off { border-top: 2px dashed var(--red-val); margin-top: 10px; padding-top: 15px; opacity: 0.5; }
@@ -84,76 +82,60 @@
         .tag.yes { background: rgba(0, 230, 118, 0.2); color: var(--green-val); border: 1px solid var(--green-val); }
         .tag.no { background: rgba(255, 70, 85, 0.2); color: var(--red-val); border: 1px solid var(--red-val); }
 
-        /* NUEVA SECCION: CALENDARIO / AGENDA */
-        .timeline-section {
-            background-color: #121d28;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 40px;
-            border-left: 5px solid var(--gold-val);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-        .timeline-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-top: 20px;
-        }
+        /* Agenda */
+        .timeline-section { background-color: #121d28; border-radius: 12px; padding: 30px; margin-bottom: 40px; border-left: 5px solid var(--gold-val); }
+        .timeline-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
         @media(max-width: 850px) { .timeline-grid { grid-template-columns: repeat(2, 1fr); gap: 20px;} }
         @media(max-width: 480px) { .timeline-grid { grid-template-columns: 1fr; } }
-        
-        .timeline-card {
-            background-color: #0f1923;
-            padding: 20px;
-            border-radius: 8px;
-            border-top: 4px solid var(--red-val);
-            position: relative;
-        }
+        .timeline-card { background-color: #0f1923; padding: 20px; border-radius: 8px; border-top: 4px solid var(--red-val); }
         .t-date { font-weight: 900; font-size: 1.1rem; color: var(--red-val); margin-bottom: 5px; letter-spacing: 0.5px;}
-        .timeline-card h4 { color: white; font-size: 1.05rem; margin-bottom: 8px; }
-        .timeline-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; }
 
-        /* Tabla Principal */
+        /* Tabla y Buscador */
+        .table-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;}
+        .search-box { padding: 10px 15px; border-radius: 6px; border: 1px solid var(--cyan-val); background: #101820; color: white; width: 260px; font-size: 0.95rem; outline: none;}
+        .search-box:focus { box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);}
+        
         .table-wrapper { overflow-x: auto; margin-bottom: 40px; background: var(--bg-card); border-radius: 12px; padding: 20px;}
         table { width: 100%; border-collapse: collapse; text-align: left; }
         th { background-color: var(--bg-main); color: var(--gold-val); padding: 14px; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; }
         td { padding: 14px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; }
-        tr:hover td { background-color: rgba(255,255,255,0.02); }
+        tr:hover td { background-color: rgba(255,255,255,0.03); }
         .rank-col { font-weight: bold; color: var(--cyan-val); width: 50px; }
-        
         .row-qualified td { border-left: 3px solid var(--green-val); }
         .row-danger td { border-left: 3px solid var(--red-val); opacity: 0.7; background: rgba(255,0,0,0.03);}
         
-        .terror-divider td {
-            background-color: var(--red-val) !important;
-            color: white;
-            text-align: center;
-            font-weight: 900;
-            letter-spacing: 2px;
-            padding: 10px;
-            font-size: 0.9rem;
-        }
+        .terror-divider td { background-color: var(--red-val) !important; color: white; text-align: center; font-weight: 900; letter-spacing: 2px; padding: 12px; font-size: 0.9rem; }
 
-        /* Tarjetas de ejemplos */
+        /* Ejemplos */
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px;}
         @media(max-width: 850px) { .grid-3 { grid-template-columns: 1fr; } }
         .example-card { background: #101820; padding: 20px; border-radius: 8px; border-top: 3px solid var(--cyan-val); }
         .example-card h4 { color: var(--cyan-val); margin-bottom: 10px; font-size: 1.1rem; }
 
-        /* Examen Interactivo */
-        .quiz-section { background: var(--bg-card); padding: 30px; border-radius: 12px; border: 1px solid #36495d; }
+        /* Examen */
+        .quiz-section { background: var(--bg-card); padding: 30px; border-radius: 12px; border: 1px solid #36495d; margin-bottom: 40px;}
         details { background: #101820; margin-bottom: 10px; border-radius: 6px; overflow: hidden; }
         summary { padding: 18px; font-weight: bold; cursor: pointer; list-style: none; display: flex; justify-content: space-between; font-size: 1.05rem;}
         summary::-webkit-details-marker { display: none; }
-        summary:after { content: "► VER RESPUESTA"; font-size: 0.8rem; color: var(--gold-val); align-self: center; margin-left: 10px;}
+        summary:after { content: "► VER RESPUESTA"; font-size: 0.8rem; color: var(--gold-val); align-self: center;}
         details[open] summary:after { content: "▼ OCULTAR"; }
         .answer { padding: 20px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--cyan-val); font-size: 1.05rem; }
 
-        @media print {
-            body { background-color: #0f1923 !important; -webkit-print-color-adjust: exact; color-adjust: exact; }
-            .page-break { page-break-before: always; }
-            details[open] .answer { display: block; }
+        /* BOTON WHATSAPP */
+        .wsp-container { text-align: center; margin-top: 20px; }
+        .wsp-btn {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            font-weight: 900;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.2s;
         }
+        .wsp-btn:hover { transform: scale(1.05); background-color: #20ba5a; }
     </style>
 </head>
 <body>
@@ -161,24 +143,33 @@
 <div class="container">
 
     <header>
-        <span class="badge-date">FOTO ACTUALIZADA AL: 23 DE JUNIO DE 2026</span>
+        <span class="badge-date">MANUAL V2.0 | ACTUALIZADO: JUNIO 2026</span>
         <h1>MUNDIAL DE VALORANT (ENC 2026)</h1>
-        <p class="subtitle">Manual de desintoxicación mental para entender el ranking oficial de países</p>
+        <p class="subtitle">Guía de supervivencia para entender el ranking oficial de países</p>
     </header>
+
+    <!-- EL RELOJ DEL APOCALIPSIS -->
+    <div class="countdown-wrapper">
+        <h3>⏳ Tiempo restante para el cierre de la "Aduana de Puntos" (31 de Octubre):</h3>
+        <div class="timer-grid">
+            <div class="timer-box"><div class="timer-num" id="d">--</div><div class="timer-label">Días</div></div>
+            <div class="timer-box"><div class="timer-num" id="h">--</div><div class="timer-label">Horas</div></div>
+            <div class="timer-box"><div class="timer-num" id="m">--</div><div class="timer-label">Mins</div></div>
+            <div class="timer-box"><div class="timer-num" id="s">--</div><div class="timer-label">Segs</div></div>
+        </div>
+    </div>
 
     <!-- CONCEPTO CLAVE -->
     <div class="grid-2">
         <div class="card">
             <h3>🏢 DE LUNES A VIERNES (Tu trabajo)</h3>
-            <p>Jugás el circuito normal (VCT) representando a una <strong>empresa privada</strong> (Sentinels, Leviatán, Fnatic).</p>
-            <br>
-            <p style="color: var(--text-muted)"><em>Regla:</em> El dueño del club compra a quien quiere. En la misma oficina pueden trabajar un coreano, un chileno y un turco. Si ganan una copa, la copa física se queda en la oficina de la empresa.</p>
+            <p>Jugás el circuito VCT representando a una <strong>empresa privada</strong> (Sentinels, Leviatán, Fnatic).</p><br>
+            <p style="color: var(--text-muted)"><em>Regla:</em> El dueño compra a quien quiere. En la misma oficina trabajan un coreano y un chileno. Si ganan una copa, se queda en la oficina de la empresa.</p>
         </div>
         <div class="card red">
             <h3>✈️ EN NOVIEMBRE (Tu patria)</h3>
-            <p>Se suspenden los clubes. Viajás a Arabia Saudita a jugar la Esports Nations Cup (ENC) representando a <strong>tu DNI</strong>.</p>
-            <br>
-            <p style="color: var(--text-muted)"><em>Regla:</em> Riot Games le cuelga a cada jugador una "mochila virtual". Cada partido que jugás bien durante el año, Riot te mete puntos en tu mochila. <strong>Esos puntos son tuyos, no de tu jefe.</strong></p>
+            <p>Se suspenden los clubes. Viajás a Arabia Saudita a jugar la ENC representando a <strong>tu DNI</strong>.</p><br>
+            <p style="color: var(--text-muted)"><em>Regla:</em> Riot te cuelga una "mochila virtual". Cada partido que jugás bien en el año, te meten puntos ahí. <strong>Esos puntos son tuyos, no de tu jefe.</strong></p>
         </div>
     </div>
 
@@ -186,7 +177,7 @@
     <div class="math-container">
         <span class="badge-date" style="background:var(--gold-val); color:black;">EL SECRETO MATEMÁTICO</span>
         <h2>¿Por qué la tabla dice que EE.UU. tiene 13.000 puntos exactos?</h2>
-        <p>Si sumás con calculadora a todos los yanquis de la lista te da más de 14.000. ¿Por qué la tabla marca 13k? <strong>Porque el reglamento dice: "Sólo se suman las mochilas de los 5 mejores de cada país".</strong></p>
+        <p>Si sumás con calculadora a todos los yanquis te da como 15.000. ¿Por qué la tabla marca 13k? <strong>Porque el reglamento dice: "Sólo se suman las mochilas de los 5 mejores de cada país".</strong></p>
         
         <ul class="roster-list">
             <li><span>1. skuba</span> <span>2.900 pts</span> <span class="tag yes">SÍ SUMA</span></li>
@@ -194,143 +185,145 @@
             <li><span>3. trent</span> <span>2.400 pts</span> <span class="tag yes">SÍ SUMA</span></li>
             <li><span>4. valyn</span> <span>2.400 pts</span> <span class="tag yes">SÍ SUMA</span></li>
             <li><span>5. leaf</span> <span>2.400 pts</span> <span class="tag yes">SÍ SUMA</span></li>
-            
             <li class="cut-off"><span>6. zekken</span> <span>650 pts</span> <span class="tag no">SUPLENTE (No suma)</span></li>
-            <li style="opacity: 0.5;"><span>7. Cryocells</span> <span>500 pts</span> <span class="tag no">SUPLENTE (No suma)</span></li>
         </ul>
-        
-        <div style="margin-top: 20px; text-align: center; font-size: 1.3rem;">
-            Matemática pura: <strong style="color:var(--green-val);">2900 + 2900 + 2400 + 2400 + 2400 = 13.000 exactos.</strong>
-        </div>
     </div>
 
-    <div class="page-break"></div> <!-- Salto de pagina PDF -->
-
-    <!-- NUEVA SECCION: AGENDA Y FECHAS -->
+    <!-- AGENDA -->
     <div class="timeline-section">
         <span class="badge-date" style="background: var(--gold-val); color: black;">AGENDA OFICIAL</span>
-        <h2 style="margin-bottom: 5px; color: white;">🗓️ CALENDARIO ENC 2026: El camino a Arabia Saudita</h2>
-        <p style="color: var(--text-muted);">Sede del evento: <strong>Riad, Arabia Saudita</strong> (SEF Arena). Formato LAN presencial.</p>
+        <h2 style="color: white;">🗓️ CALENDARIO ENC 2026: El camino a Riad</h2>
+        <p style="color: var(--text-muted);">Sede del evento: <strong>Riad, Arabia Saudita</strong> (SEF Arena). Presencial.</p>
         
         <div class="timeline-grid">
             <div class="timeline-card" style="border-top-color: var(--cyan-val);">
-                <div class="t-date" style="color: var(--cyan-val);">HOY (23 JUN)</div>
-                <h4>Fase de Siembra</h4>
-                <p>Plena temporada de VCT. Los jugadores compiten en sus clubes intentando engordar sus mochilas de puntos individuales.</p>
+                <div class="t-date" style="color: var(--cyan-val);">HOY</div>
+                <h4>Fase de Siembra</h4><p>Los jugadores compiten en sus clubes intentando engordar sus mochilas individuales.</p>
             </div>
-
             <div class="timeline-card" style="border-top-color: var(--red-val);">
                 <div class="t-date" style="color: var(--red-val);">31 DE OCTUBRE</div>
-                <h4>"Cierre de Aduana"</h4>
-                <p>A las 23:59hs se congela el ranking. Los 16 países con más puntos clasifican directo. El resto queda eliminado de la vía directa.</p>
+                <h4>Cierre de Aduana</h4><p>A las 23:59hs se congela la foto. Los 16 primeros clasifican directo.</p>
             </div>
-
             <div class="timeline-card" style="border-top-color: var(--gold-val);">
                 <div class="t-date" style="color: var(--gold-val);">16 AL 22 NOV</div>
-                <h4>Fase de Grupos</h4>
-                <p>Comienza el Mundial. 32 países divididos en 4 grupos de 8 integrantes. Juegan todos contra todos a un solo mapa (Bo1).</p>
+                <h4>Fase de Grupos</h4><p>32 países en 4 grupos de 8. Juegan todos contra todos a un solo mapa (Bo1).</p>
             </div>
-
             <div class="timeline-card" style="border-top-color: var(--green-val);">
                 <div class="t-date" style="color: var(--green-val);">24 AL 29 NOV</div>
-                <h4>Playoffs & Final</h4>
-                <p>Los 16 mejores a eliminación directa (Bo3). El <strong>Domingo 29 de Noviembre</strong> es la Gran Final al mejor de 5 (Bo5) para ser Campeón del Mundo.</p>
+                <h4>La Gran Final</h4><p>Playoffs a Bo3. El Domingo 29 es la final al mejor de 5 para levantar la copa.</p>
             </div>
         </div>
     </div>
 
-    <!-- TABLA DE CLASIFICACION -->
-    <h2 style="margin-bottom: 15px;">📊 TABLA DE POSICIONES AL DÍA DE HOY</h2>
-    <p style="color:var(--text-muted); margin-bottom:20px;">Si la "Aduana" del 31 de Octubre cerrara hoy a la noche, los clasificados serían estos:</p>
+    <!-- TABLA CON BUSCADOR -->
+    <div class="table-header-bar">
+        <h2>📊 TABLA DE POSICIONES EN VIVO</h2>
+        <input type="text" id="buscador" class="search-box" placeholder="🔍 Escribí un país para filtrar..." onkeyup="filtrarTabla()">
+    </div>
 
     <div class="table-wrapper">
-        <table>
+        <table id="tablaPaises">
             <thead>
                 <tr>
                     <th class="rank-col">#</th>
                     <th>País</th>
                     <th>Puntos</th>
-                    <th>Los 5 que están aportando hoy</th>
+                    <th>Los 5 que aportan hoy</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="row-qualified"><td class="rank-col">1</td><td><strong>Estados Unidos</strong></td><td>13.000</td><td>skuba, Ethan, trent, valyn, leaf</td></tr>
-                <tr class="row-qualified"><td class="rank-col">2</td><td><strong>Corea del Sur</strong></td><td>8.525</td><td>Francis, Ivy, Dambi, iZu, Munchkin</td></tr>
-                <tr class="row-qualified"><td class="rank-col">3</td><td><strong>China</strong></td><td>7.975</td><td>ZmjjKK, CHICHOO, nobody, K1ra, Lysoar</td></tr>
-                <tr class="row-qualified"><td class="rank-col">4</td><td><strong>Canadá</strong></td><td>6.250</td><td>mada, eeiu, koalanoob, JonahP, Zander</td></tr>
-                <tr class="row-qualified"><td class="rank-col">5</td><td><strong>Turquía</strong></td><td>6.200</td><td>RieNs, Wo0t, Alfajer, Lar0k, s0pp</td></tr>
-                <tr class="row-qualified"><td class="rank-col">6</td><td><strong>Brasil</strong></td><td>5.800</td><td>Sato, spikeziN, artzin, aspas, Less</td></tr>
-                <tr class="row-qualified"><td class="rank-col">7</td><td><strong>Singapur</strong></td><td>5.750</td><td>Jinggg, nephh, wayne, Deryeon, Vera</td></tr>
-                <tr class="row-qualified"><td class="rank-col">8</td><td><strong>Polonia</strong></td><td>5.225</td><td>kaajak, PROFEK, kamo, starxo, westside</td></tr>
-                <tr class="row-qualified"><td class="rank-col">9</td><td><strong>Filipinas</strong></td><td>4.875</td><td>invy, PatMen, xavi8k, Wild0reoo, kellyS</td></tr>
-                <tr class="row-qualified"><td class="rank-col">10</td><td><strong>Reino Unido</strong></td><td>4.750</td><td>keiko, benjyfishy, Lime, Ticey, Sevire</td></tr>
-                <tr class="row-qualified"><td class="rank-col">11</td><td><strong>Taiwán</strong></td><td>3.975</td><td>Nicc, SpiritZ1, WsLeo, Yuicaw, S1Mon</td></tr>
-                <tr class="row-qualified"><td class="rank-col">12</td><td><strong>Malasia</strong></td><td>3.800</td><td>d4v41, xan <em>(Ojo: solo tienen 2 jugadores con puntos)</em></td></tr>
-                <tr class="row-qualified"><td class="rank-col">13</td><td><strong>Finlandia</strong></td><td>3.675</td><td>Jamppi, Derke, iluri, Famsii, H1ber</td></tr>
-                <tr class="row-qualified"><td class="rank-col">14</td><td><strong>Lituania</strong></td><td>3.650</td><td>Boo, MiniBoo, Koshmaras, Kajuks, Destrian</td></tr>
-                <tr class="row-qualified"><td class="rank-col">15</td><td><strong>Tailandia</strong></td><td>3.450</td><td>killua, Primmie, JitboyS, PTC, Apinya</td></tr>
-                <tr class="row-qualified"><td class="rank-col">16</td><td><strong>Chile</strong></td><td>3.300</td><td>kiNgg, Mazino, Shyy, david, keznit</td></tr>
+                <tr class="row-qualified"><td class="rank-col">1</td><td>🇺🇸 <strong>Estados Unidos</strong></td><td>13.000</td><td>skuba, Ethan, trent, valyn, leaf</td></tr>
+                <tr class="row-qualified"><td class="rank-col">2</td><td>🇰🇷 <strong>Corea del Sur</strong></td><td>8.525</td><td>Francis, Ivy, Dambi, iZu, Munchkin</td></tr>
+                <tr class="row-qualified"><td class="rank-col">3</td><td>🇨🇳 <strong>China</strong></td><td>7.975</td><td>ZmjjKK, CHICHOO, nobody, K1ra, Lysoar</td></tr>
+                <tr class="row-qualified"><td class="rank-col">4</td><td>🇨🇦 <strong>Canadá</strong></td><td>6.250</td><td>mada, eeiu, koalanoob, JonahP, Zander</td></tr>
+                <tr class="row-qualified"><td class="rank-col">5</td><td>🇹🇷 <strong>Turquía</strong></td><td>6.200</td><td>RieNs, Wo0t, Alfajer, Lar0k, s0pp</td></tr>
+                <tr class="row-qualified"><td class="rank-col">6</td><td>🇧🇷 <strong>Brasil</strong></td><td>5.800</td><td>Sato, spikeziN, artzin, aspas, Less</td></tr>
+                <tr class="row-qualified"><td class="rank-col">7</td><td>🇸🇬 <strong>Singapur</strong></td><td>5.750</td><td>Jinggg, nephh, wayne, Deryeon, Vera</td></tr>
+                <tr class="row-qualified"><td class="rank-col">8</td><td>🇵🇱 <strong>Polonia</strong></td><td>5.225</td><td>kaajak, PROFEK, kamo, starxo, westside</td></tr>
+                <tr class="row-qualified"><td class="rank-col">9</td><td>🇵🇭 <strong>Filipinas</strong></td><td>4.875</td><td>invy, PatMen, xavi8k, Wild0reoo, kellyS</td></tr>
+                <tr class="row-qualified"><td class="rank-col">10</td><td>🇬🇧 <strong>Reino Unido</strong></td><td>4.750</td><td>keiko, benjyfishy, Lime, Ticey, Sevire</td></tr>
+                <tr class="row-qualified"><td class="rank-col">11</td><td>🇹🇼 <strong>Taiwán</strong></td><td>3.975</td><td>Nicc, SpiritZ1, WsLeo, Yuicaw, S1Mon</td></tr>
+                <tr class="row-qualified"><td class="rank-col">12</td><td>🇲🇾 <strong>Malasia</strong></td><td>3.800</td><td>d4v41, xan <em>(Ojo: solo tienen 2 jugadores)</em></td></tr>
+                <tr class="row-qualified"><td class="rank-col">13</td><td>🇫🇮 <strong>Finlandia</strong></td><td>3.675</td><td>Jamppi, Derke, iluri, Famsii, H1ber</td></tr>
+                <tr class="row-qualified"><td class="rank-col">14</td><td>🇱🇹 <strong>Lituania</strong></td><td>3.650</td><td>Boo, MiniBoo, Koshmaras, Kajuks, Destrian</td></tr>
+                <tr class="row-qualified"><td class="rank-col">15</td><td>🇹🇭 <strong>Tailandia</strong></td><td>3.450</td><td>killua, Primmie, JitboyS, PTC, Apinya</td></tr>
+                <tr class="row-qualified"><td class="rank-col">16</td><td>🇨🇱 <strong>Chile</strong></td><td>3.300</td><td>kiNgg, Mazino, Shyy, david, keznit</td></tr>
 
-                <!-- LINEA DEL TERROR -->
-                <tr class="terror-divider"><td colspan="4">▲ CLASIFICADOS HOY  |  [ LÍNEA DE CORTE DEL 31 DE OCTUBRE ]  |  ELIMINADOS HOY ▼</td></tr>
+                <tr class="terror-divider"><td colspan="4">▲ CLASIFICADOS DIRECTOS  |  [ CORTE DEL 31 DE OCTUBRE ]  |  ZONA ROJA ▼</td></tr>
 
-                <tr class="row-danger"><td class="rank-col" style="color:var(--red-val);">17</td><td>Chequia</td><td>3.200</td><td>Magnum, marteen, Minny, MONSTEERR, Jesse</td></tr>
-                <tr class="row-danger"><td class="rank-col" style="color:var(--red-val);">18</td><td>Argentina</td><td>2.700</td><td>Neon, jotinha, Saadhak, Dantedeu5, rubkkoide</td></tr>
+                <tr class="row-danger"><td class="rank-col" style="color:var(--red-val);">17</td><td>🇨🇿 Chequia</td><td>3.200</td><td>Magnum, marteen, Minny, MONSTEERR, Jesse</td></tr>
+                <tr class="row-danger"><td class="rank-col" style="color:var(--red-val);">18</td><td>🇦🇷 Argentina</td><td>2.700</td><td>Neon, jotinha, Saadhak, Dantedeu5, rubkkoide</td></tr>
             </tbody>
         </table>
     </div>
 
-    <!-- CASOS PARADIGMATICOS -->
-    <h2 style="margin-bottom: 15px;">🧠 TRES CASOS PARA DESTRABARTE LA CABEZA</h2>
+    <!-- EJEMPLOS -->
+    <h2>🧠 TRES CASOS PARA DESTRABARTE LA CABEZA</h2>
     <div class="grid-3">
         <div class="example-card">
             <h4>1. El "Adorno" (TenZ 🇨🇦)</h4>
-            <p>En la lista de Canadá dice <em>TenZ (0 pts)</em> porque este año no jugó. ¿Por qué Canadá va 4to? Porque su compañero <strong>'mada'</strong> anduvo poseído y metió 2.900 puntos él solo. Canadá clasifica por mada; TenZ hoy está de espectador.</p>
+            <p>En Canadá dice <em>TenZ (0 pts)</em> porque no jugó. ¿Por qué van 4tos? Porque su compañero <strong>'mada'</strong> metió 2.900 puntos él solo. TenZ hoy está de espectador.</p>
         </div>
         <div class="example-card">
-            <h4>2. El efecto Superman (Malasia 🇲🇾)</h4>
-            <p>Malasia va 12º en el mundo teniendo solo 2 jugadores con puntos. ¿Por qué? Porque el jugador <strong>'d4v41'</strong> tiene 3.500 puntos en su mochila. Él solo empujó a todo su país adentro del Mundial.</p>
+            <h4>2. Efecto Superman (Malasia 🇲🇾)</h4>
+            <p>Malasia va 12º teniendo solo 2 jugadores. ¿Por qué? Porque <strong>'d4v41'</strong> tiene 3.500 puntos en su mochila. Él solo metió a su país en el Mundial.</p>
         </div>
         <div class="example-card" style="border-top-color: var(--red-val);">
-            <h4>3. Guerra civil (Compañeros de Club)</h4>
-            <p>Hoy a la tarde dos jugadores de distinto país ganan un partido juntos en su club. Los puntos de uno van a la bolsa de Brasil y los del otro a Chile. En noviembre se rompe el contrato y se van a tener que disparar a la cabeza.</p>
+            <h4>3. Guerra Civil</h4>
+            <p>Hoy dos compañeros de club ganan juntos. Los puntos de uno van a Brasil y los del otro a Chile. En noviembre se rompe el contrato y se tienen que disparar.</p>
         </div>
     </div>
 
-    <div class="page-break"></div>
-
-    <!-- EXAMEN FINAL INTERACTIVO -->
+    <!-- EXAMEN -->
     <div class="quiz-section">
-        <span class="badge-date" style="background:var(--cyan-val); color:black;">EVALUACIÓN FINAL</span>
-        <h2 style="margin-bottom: 20px;">Hacé clic en las preguntas para ver si entendiste:</h2>
-
-        <details>
-            <summary>Pregunta 1: Si mañana echan a 'Ethan' de su club en EE.UU. y se va a vivir a Japón... ¿EE.UU. pierde sus 2.900 puntos?</summary>
-            <div class="answer">
-                <strong>¡NO!</strong> No los pierde. Porque los puntos están pegados al número de pasaporte de Ethan, no al contrato de su oficina. Ethan seguirá sumando para Estados Unidos aunque coma ramen en Tokio todos los días.
-            </div>
-        </details>
-
-        <details>
-            <summary>Pregunta 2: Chequia (Puesto 17) está a solo 100 puntos de alcanzar a Chile (Puesto 16). ¿Qué pasa si hoy a la noche un jugador checo gana 150 puntos?</summary>
-            <div class="answer">
-                Chequia pasa a tener 3.350 puntos, <strong>salta al puesto #16 y manda a Chile a la zona roja de eliminados.</strong> Por eso el ranking se mira todos los días hasta el 31 de octubre.
-            </div>
-        </details>
-
-        <details>
-            <summary>Pregunta 3: ¿Por qué en la fase de grupos (16 de Noviembre) los jugadores no usan la remera de Sentinels o Fnatic?</summary>
-            <div class="answer">
-                Porque el 1 de Noviembre los clubes entran en receso obligatorio. Los dueños de las empresas privadas no tienen autoridad en Riad; ahí manda la Federación de cada país.
-            </div>
-        </details>
+        <span class="badge-date" style="background:var(--cyan-val); color:black;">TEST RÁPIDO</span>
+        <h2 style="margin-bottom: 20px;">Tocá las preguntas para ver la respuesta:</h2>
+        <details><summary>¿Si echan a Ethan de su club en EE.UU. y se muda a Japón, EE.UU. pierde sus puntos?</summary><div class="answer"><strong>NO.</strong> Los puntos están pegados a su pasaporte, no a la oficina.</div></details>
+        <details><summary>Chequia (#17) está a 100 puntos de Chile (#16). ¿Qué pasa si hoy un checo gana 150 pts?</summary><div class="answer">Chequia salta al puesto #16 y <strong>manda a Chile a la zona de eliminados.</strong></div></details>
     </div>
 
-    <footer style="margin-top: 40px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
-        Página oficial creado para IRLIVS.
-    </footer>
+    <!-- BOTON WHATSAPP -->
+    <div class="wsp-container">
+        <a href="https://api.whatsapp.com/send?text=Amiga%20por%20favor%20le%C3%A9%20esta%20gu%C3%ADa%20que%20me%20armaron%20para%20entender%20el%20Mundial%20de%20Valorant:%20https://facucolmanii.github.io/EXPLICACION/" target="_blank" class="wsp-btn">
+            🟢 MANDAR ESTA GUÍA POR WHATSAPP
+        </a>
+    </div>
 
 </div>
+
+<!-- SCRIPT DEL RELOJ Y BUSCADOR -->
+<script>
+    // 1. CODIGO DEL RELOJ
+    function actualizarReloj() {
+        const fechaCorte = new Date("Oct 31, 2026 23:59:59").getTime();
+        const hoy = new Date().getTime();
+        const distancia = fechaCorte - hoy;
+
+        if (distancia > 0) {
+            document.getElementById("d").innerText = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            document.getElementById("h").innerText = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("m").innerText = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("s").innerText = Math.floor((distancia % (1000 * 60)) / 1000);
+        }
+    }
+    setInterval(actualizarReloj, 1000);
+    actualizarReloj();
+
+    // 2. CODIGO DEL BUSCADOR DE PAISES
+    function filtrarTabla() {
+        const textoBusqueda = document.getElementById("buscador").value.toLowerCase();
+        const filas = document.getElementById("tablaPaises").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+        for (let i = 0; i < filas.length; i++) {
+            if (filas[i].classList.contains("terror-divider")) continue;
+            const celdaPais = filas[i].getElementsByTagName("td")[1];
+            if (celdaPais) {
+                const nombrePais = celdaPais.textContent || celdaPais.innerText;
+                filas[i].style.display = nombrePais.toLowerCase().includes(textoBusqueda) ? "" : "none";
+            }
+        }
+    }
+</script>
 
 </body>
 </html>
